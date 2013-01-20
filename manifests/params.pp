@@ -48,7 +48,7 @@ class cassandra::params {
     case $::osfamily {
         'Debian': {
             $package_name = $::cassandra_package_name ? {
-                undef   => 'dsc1.1',
+                undef   => 'cassandra',
                 default => $::cassandra_package_name,
             }
 

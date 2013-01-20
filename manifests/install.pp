@@ -1,5 +1,5 @@
 class cassandra::install {
-    package { 'dsc':
+    package { 'cassandra':
         ensure => $cassandra::version,
         name   => $cassandra::package_name,
     }
@@ -23,7 +23,7 @@ class cassandra::install {
             creates => '/etc/cassandra/CASSANDRA-2356',
             user    => 'root',
             require => [
-                    Package['dsc'],
+                    Package['cassandra'],
                     File['CASSANDRA-2356 /etc/cassandra'],
                 ],
         }
