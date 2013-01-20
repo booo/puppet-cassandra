@@ -118,7 +118,7 @@ class cassandra::params {
     }
 
     $partitioner = $::cassandra_partitioner ? {
-        undef   => 'org.apache.cassandra.dht.RandomPartitioner',
+        undef   => 'org.apache.cassandra.dht.Murmur3Partitioner',
         default => $::cassandra_partitioner,
     }
 
