@@ -137,6 +137,11 @@ class cassandra::params {
         default => $::cassandra_saved_caches_directory,
     }
 
+    $num_tokens = $::cassandra_num_tokens ? {
+        undef   => 256,
+        default => $::cassandra_num_tokens,
+    }
+
     $initial_token = $::cassandra_initial_token ? {
         undef   => '',
         default => $::cassandra_initial_token,
